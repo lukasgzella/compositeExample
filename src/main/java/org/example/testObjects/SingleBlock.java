@@ -5,6 +5,7 @@ import org.example.Block;
 import java.util.Objects;
 
 public class SingleBlock implements Block {
+
     private final String color;
     private final String material;
 

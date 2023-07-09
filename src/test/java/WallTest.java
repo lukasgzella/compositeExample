@@ -2,6 +2,7 @@ import org.example.Block;
 import org.example.Wall;
 import org.example.testObjects.SingleBlock;
 import org.junit.Test;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -54,7 +55,7 @@ public class WallTest {
     }
 
     @Test
-    public void getBlocks_ceramicConcreteWall_returnList() {
+    public void getBlocks_ceramicConcreteWall_returnListOfBlocks() {
         //given
         Wall wall = initCeramicConcreteWall();
         List<Block> expected = List.of(
@@ -70,7 +71,7 @@ public class WallTest {
     }
 
     @Test
-    public void getBlocks_plasticGlass_returnList() {
+    public void getBlocks_plasticGlassWall_returnListOfBlocks() {
         //given
         Wall wall = initPlasticGlassWall();
         List<Block> expected = List.of(
@@ -86,7 +87,7 @@ public class WallTest {
     }
 
     @Test
-    public void getBlocks_complexWall_returnList() {
+    public void getBlocks_complexWall_returnListOfBlocks() {
         //given
         Wall complexWall = initComplexWall();
         List<Block> expected = List.of(
@@ -105,7 +106,7 @@ public class WallTest {
     }
 
     @Test
-    public void getBlocks_complexNestedWall_returnList() {
+    public void getBlocks_complexNestedWall_returnListOfBlocks() {
         //given
         Wall complexNestedWall = initComplexNestedWall();
         List<Block> expected = List.of(
@@ -168,7 +169,10 @@ public class WallTest {
     public void getColor_complexNestedWall_returnColors() {
         //given
         Wall wall = initComplexNestedWall();
-        String expected = List.of("red", "grey", "orange", "sandy", "yellow", "blue", "transparent", "green").toString();
+        String expected = List.of(
+                        "red", "grey", "orange", "sandy", "yellow", "blue", "transparent", "green"
+                )
+                .toString();
         //when
         String actual = wall.getColor();
         //then
